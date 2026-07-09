@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="device-width, initial-scale=1.0">
+        <title>Team Reviews |  SoundWave Instruments</title>
+        <style>
+
+
+            :root {
+                --bg-color: #0c0c5e;
+                --card-bg: #1a1a24;
+                --accent-gold: #ffb830;
+                --accent-neon: #00adb5;
+                --text-main: #ffffff;
+                --text-muted: #94a3b8;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            body {
+                background-color: var(--bg-color);
+                color: var(--text-main);
+                min-height: 100vh;
+                padding: 2rem 1rem;
+                margin: 0;
+                padding: 0;
+            }
+
+            .navbar{
+                background-color: #1a1a1a;
+                color:white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 30px;
+                position: sticky;
+                top:0;
+                z-index: 1000;
+                gap:20px;
+                width: 100%;
+            }
+            
+            .menu a{
+                color:white;
+                text-decoration: none;
+                margin: 0 15px;
+                font-weight: 500;
+            }
+
+            .logo{
+                font-size: 24px;
+                font-weight: bold;
+                color: #ff9800;
+                display: flex;
+                align-items: center;
+                gap:10px;
+
+            }
+
+            .logo img{
+                height:80px;
+            }
+
+           
+           
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            header {
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                letter-spacing: 1px;
+                margin-bottom: 0.5rem;
+                background: linear-gradient(45deg, var(--text-main), var(--accent-neon));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            header p {
+                color: var(--text-muted);
+                font-size: 1rem;
+            }
+
+            .filter-controls {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-bottom: 3rem;
+                flex-wrap: wrap;
+            }
+
+            .filter-label {
+                padding: 0.6rem 1.5rem;
+                background: var(--card-bg);
+                border: 1px solid #2e2e3e;
+                border-radius: 30px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-size: 0.9rem;
+                font-weight: 600;
+            }
+
+            .filter-label-hover {
+                border-color: var(--accent-neon);
+                color: var(--accent-neon);
+            }
+
+            input[type="radio"] {
+                display: none;
+            }
+
+            #all:checked ~ .filter-controls label[for="all"],
+            #guitars:checked ~ .filter-controls label[for="guitars"],
+            #pianos:checked ~ .filter-controls label[for="pianos"],
+            #drums:checked ~ .filter-controls label[for="drums"] {
+                background: var(--accent-neon);
+                color: var(--bg-color);
+                border-color: var(--accent-neon);
+                box-shadow: 0 0 15px rgba(0, 173, 181, 0.4);
+            }
+
+            #guitars:checked ~ .testimonials-grid .testimonials-card:not(.cat-guitars),
+            #pianos:checked ~ .testimonials-grid .testimonials-card:not(.cat-pianos),
+            #drums:checked ~ .testimonials-grid .testimonials-card:not(.cat-drums) {
+                display: none;
+            }
+
+            .testimonials-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                gap: 2rem;
+            }
+
+            .testimonial-card {
+                background: var(--card-bg);
+                border-radius: 16px;
+                padding: 2rem;
+                border: 1px solid #222230;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: relative;
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .testimonial-card:hover {
+                transform: translate(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                border-color: #33334d;
+            }
+
+            .testimonial-card:before {
+                content: "";
+                position: absolute;
+                top: -20px;
+                right: 15px;
+                font-size: 8rem;
+                color: rgba(255,255,255, 0.03);
+                font-family: serif;
+                pointer-events: none;
+            }
+
+            .rating-stars {
+                color: var(--accent-gold);
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+                text-shadow: 0 0 5px rgba(255, 184, 48, 0.2);
+            }
+
+            .review-text {
+                color: antiquewhite;
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+                font-style: italic;
+            }
+
+            .user-profile {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                border-top: 1px solid #222230;
+                padding-top: 1.2rem;
+            }
+
+            .user-avatar {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid var(--accent-neon);
+            }
+
+            .user-info h4 {
+                font-size: 1rem;
+                font-weight: 600;
+            }
+
+            .user-info p {
+                font-size: 0.8rem;
+                color: var(--text-muted);
+            }
+
+            .product-tag {
+                margin-left: auto;
+                background: rgba(0, 173, 181, 0.4);
+                color: var(--accent-neon);
+                padding: 0.25rem 0.6rem;
+                border-radius: 4px;
+                font-size: 0.75rem;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            @media (max-width: 768px) {
+                header h1 { font-size: 2rem; }
+                .testimonials-grid { grid-template-columns: 1fr; }
+            }
+        </style>
+    </head>
+    <body>
+       
+        
+        <div class="navbar">
+           
+            <div class="logo">
+            <img src="logo.png" rel="stylesheet"> Harmony Hub </div>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="aboutus.html"> About Us</a>
+                <a href="producthighlights.html">Highlights</a>
+                <a href="features.html">Features</a>
+                <a href="testimonial.html">Testimonials</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="signup.html">SignUp</a>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <input type="radio" id="all" name="instrument-filter" checked>
+            <input type="radio" id="guitars" name="instrument-filter">
+            <input type="radio" id="pianos" name="instrument-filter">
+            <input type="radio" id="drums" name="instrument-filter">
+
+            <header>
+                <h1>What the Artists say</h1>
+                <p>Real reviews from our Special team.</p>
+            </header>
+
+            <div class="filter-controls">
+                <label for="all" class="filter-label">All Gear</label>
+                <label for="guitars" class="filter-label">Guitars</label>
+                <label for="pianos" class="filter-label">Pianos & Keys</label>
+                <label for="drums" class="filter-label">Drums & Percussion</label>
+            </div>
+
+            <main class="testimonials-grid">
+
+                <div class="testimonial-card cat-guitars">
+                    <div class="rating-stars">*****</div>
+                    <p class="review-text">"The Action on the custom Start is flawless right out of the box. The tone is incredibly rich, and the sustain is unreal. Worth every single Rupee."</p>
+                    <div class="user-profile">
+
+                        <div class="user-info">
+                             <h4>Chaithanya</h4>
+                             <p>Lead Guitarist</p>
+                        </div>
+                         <span class="product-tag">Guitar</span>
+                    </div>
+                </div> 
+
+                <div class="testimonial-card cat-pianos">
+                    <div class="rating-stars">*****</div>
+                    <p class="review-text">"The weighted keys feel remarkably close to an acoustic grand. The built-in MIDI integration integrated seamlessly into my studio workflow."</p>
+                    <div class="user-profile">
+
+                        <div class="user-info">
+                             <h4>Fathima</h4>
+                             <p>Composer</p>
+                        </div>
+                         <span class="product-tag">Keys</span>
+                    </div>
+                </div> 
+
+                <div class="testimonial-card cat-drums">
+                    <div class="rating-stars">****</div>
+                    <p class="review-text">"An absolute beast of a kit. The mesh heads provide excellent feedback and the module sound library is top-notch. Only dropping one star because shipping took a week."</p>
+                    <div class="user-profile">
+
+                        <div class="user-info">
+                             <h4>Rakhi</h4>
+                             <p>Session Drummer</p>
+                        </div>
+                         <span class="product-tag">Drums</span>
+                    </div>
+                </div> 
+
+                <div class="testimonial-card cat-guitars">
+                    <div class="rating-stars">*****</div>
+                    <p class="review-text">"Phenomenal craftsmanship. The tone woods look stunning and the warmth coming from this acoustic fills the whole room. Highly ADDICTIVE."</p>
+                    <div class="user-profile">
+
+                        <div class="user-info">
+                             <h4>Govardhan</h4>
+                             <p>Lyricist</p>
+                        </div>
+                         <span class="product-tag">Guitar</span>
+                    </div>
+                </div> 
+
+                <div class="testimonial-card cat-drums">
+                    <div class="rating-stars">*****</div>
+                    <p class="review-text">"The same Crack on this setup is crisp Perfect for both small club gigs and studio recording. Hardware is sturdy enough to survive heavy touring."</p>
+                    <div class="user-profile">
+
+                        <div class="user-info">
+                             <h4>Swathy</h4>
+                             <p>Percussion Enthusiast</p>
+                        </div>
+                         <span class="product-tag">Guitar</span>
+                    </div>
+                </div> 
+            </main>
+        </div>
+    </body>
+</html>
