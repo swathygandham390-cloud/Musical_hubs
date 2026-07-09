@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            }
+
+            body{
+                background-color: #f8f8f8;
+                color:#333;
+                height:100%;
+                margin: 0;
+                min-height: 100vh;
+            
+            }
+
+            .navbar{
+                background-color: #1a1a1a;
+                color:white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 30px;
+                position: sticky;
+                top:0;
+                z-index: 1000;
+                gap:20px;
+                height:70px;
+            }
+            
+            .menu a{
+                color:white;
+                text-decoration: none;
+                margin: 0 15px;
+                font-weight: 500;
+            }
+
+            .logo{
+                font-size: 24px;
+                font-weight: bold;
+                color: #ff9800;
+                display: flex;
+                align-items: center;
+                gap:10px;
+
+            }
+
+            .logo img{
+                height:60px;
+            }
+
+            .hero{
+                background: linear-gradient(rgba(0,0,0,0.6)),url('https://img.magnific.com/free-vector/aesthetic-jazz-background-musical-instrument-border-blue-vector_53876-156499.jpg?semt=ais_hybrid&w=740&q=80') center/cover;
+                color:white;
+                text-align: center;
+                padding: 120px 20px;
+
+            }
+
+            .hero h1 {
+                font-size: 50px;
+                margin-bottom: 15px;
+            }
+
+            .hero p{
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+
+            .btn {
+                background-color: #ff9800;
+                color:white;
+                padding: 12px 30px;
+                border:none;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            .btn:hover {
+                background-color: #e68900;
+            }
+
+            .section {
+                padding:60px 8%;
+                text-align: center;
+
+            }
+
+            .section h2 {
+                font-size: 35px;
+                margin-bottom: 10px;
+
+            }
+
+            .section p {
+                color:#666;
+                margin-bottom: 40px;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 25px;
+                margin: 80px;
+            }
+
+            .card{
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                overflow: hidden;
+                transition: transform 0.3s;
+            }
+
+            .h2,.p2{
+                margin-left:500px ;
+            }
+
+            .card:hover {
+                transform: translateY(-8px);
+            }
+
+            .card img{
+                width:100%;
+                height:180px;
+                object-fit: contain;
+                background-color: #f5f5f5;
+                padding:10px;
+            }
+
+            .card h3 {
+                padding:15px;
+                font-size: 20px;
+
+            }
+
+            .card p {
+                padding:0 15px 15px;
+                color:#777;
+            }
+
+            .products {
+                background-color: #fff;
+            }
+
+            .price {
+                color:#ff9800;
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            .about{
+                background-color: #fff;
+                width: 100%;
+                min-height: 90vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding:80px 0;
+                margin:0;
+            }
+            
+            .about h2 {
+                font-size: 48px;
+                color:#777;
+                margin-bottom: 15px;
+                text-align: center;
+                
+            }
+
+            .about > p {
+                font-size: 18px;
+                color:#777;
+                margin-bottom: 50px;
+                text-align: center;
+                
+            
+            }
+
+            #about{
+                margin-left: 0px;
+                width: 100%;
+                margin-bottom: 0px;
+            }
+
+            .about-content{
+                
+                align-items: center;
+                max-width: 100%;
+                text-align:  center;
+                width:90%;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                 }
+
+         
+             .about-text h3 {
+                font-size: 30px;
+                margin-bottom: 20px;
+                color: #1a1a1a;
+            }
+
+            .about-text p{
+                color:#444;
+                line-height: 1.8;
+                margin-bottom:15px;
+                font-size: 17px;
+            }
+
+
+          .footer {
+                background-color: #1a1a1a;
+                color:#ccc;
+                text-align: center;
+                padding: 30px 20px;
+                margin-top: 150px;
+                width:100%;
+                
+            }
+
+            .footer a {
+                color:#ff9800;
+                text-decoration: none;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+           
+            <div class="logo">
+            <img src="C:\Users\ADMIN\Documents\homepage\logo.jpg" rel="stylesheet"> Harmony Hub </div>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="aboutus.html"> About Us</a>
+                <a href="producthighlights.html">Highlights</a>
+                <a href="features.html">Features</a>
+                <a href="testimonial.html">Testimonials</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="signup.html">SignUp</a>
+            </div>
+        </div>
+
+        <div class="hero">
+            <h1>Find your Sounds</h1>
+            <p>Best musical Instruments at Best prices.</br>
+            Guitars, Pianos, Drums, & more</p>
+            <a href="login.html" class="btn">Shop Now</a>
+        </div>
+
+        <div class="section">
+            <h2>Shop By Category</h2>
+            <p>everything you need to start your musical journey</p>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://media.istockphoto.com/id/173240169/photo/acoustic-guitar.jpg?s=612x612&w=0&k=20&c=1qHVhEDx0Zqj6BnWhEPt-zfORsPX7iZ3jXdPn_OopzA=" rel="stylesheet">
+                    <h3>Guitars</h3>
+                    <p>Acoustic, Electric, & Bass Guitars</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://media.istockphoto.com/id/480652459/photo/black-grand-piano-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=HA3-PzcFl6Yd-d1s1tVrgWT_hOz5zyjcd1OhjoVduE0=" rel="stylesheet">
+                    <h3>Keyboards</h3>
+                    <p>Pianos & Synthesizers for all levels</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS46ZOXpp2UwSDK0tj71e7BR5-kKc0lBhVeVNSnXSTMnp9AXgcd1gJ2ckYD&s=10" rel="stylesheet">
+                    <h3>Drums</h3>
+                    <p>Drum kits, Cymbals & Percussion</p>
+
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9pVHrpE3i6AhnBN1ZL0EvtOn9bhklMYrQEkgshgrlzdrNrbkWTBPtUfO&s=10" rel="stylesheet">
+                    <h3>String Instruments</h3>
+                    <p>Violin, Ukulele, Sitar & more</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRAnxopQOIZJkfWDcv_uQl17s_L3CFhhVs_bjKJLUzAYR1WMdeN_3B2xnNwpe3qUMysTK5lNGJYwOsmYXHduxqnK9IQIF6tQ289fU98m4a8Eqo5-cb8QLXOxjE" rel="stylesheet">
+                    <h3>Violin</h3>
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRCpy_ANJ4YFyyOdfr5XYfm2cGs9xT-ECJXtsSrc4e3tS7_qVaAZpRx6YkSAjmDbe6H9-R1upSR_TwQ5uFeeIPi-dc1zq-_wlDnL1ZSZUgaagJ4hc1tbHo07w" rel="stylesheet">
+                    <h3>Ukulele</h3>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="section-products">
+            <h2 class="h2">Featured Instruments</h2>
+            <p class="p2">Handpicked for quality and sound</p>
+
+            <div class="grid">
+                <div class="card">
+                    <img src="https://yamahamusicstore.in/products-images/enlarge-image/VDR6680.jpg?v=1783577337" rel="stylesheet">
+                    <h3>Yamaha F310 Acoustic Guitar</h3>
+                    <p class="price">9,999 rs</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://musicmaster.in/store/wp-content/uploads/2022/06/KS42A_3.webp" rel="stylesheet">
+                    <h3>Casio CTK-2500 Keyboard</h3>
+                    <p class="price">6,499Rs</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://rajmusical.com/ekart/thumb_images/7741Jinbao-JBP1103-5-Pieces-Acoustic-Drum-Set-Black_1.jpg" rel="stylesheet">
+                    <h3>Jupiter drum kit 5-Piece</h3>
+                    <p class="price">24,999Rs</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://m.media-amazon.com/images/I/615r2C0ihXL._SY879_.jpg" rel="stylesheet">
+                    <h3>Kala MK-T Makala tenor Ukulele</h3>
+                    <p class="price"> 5,999rs</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://www.bajaao.com/cdn/shop/files/vault-violins-natural-vault-enorm-solid-spruce-top-4-4-violin-with-bow-rosin-case-outfit-33399619453107.jpg?v=1745580036&width=1400" rel="stylesheet">
+                    <h3>Vault Enorm Solid Spruce Top Violin</h3>
+                    <p class="price">8,999rs</p>
+                </div></div>
+                <hr>
+                <div class="about" id="about">
+                    <h2>About Us</h2>
+                    <p>Everything you need to know about Harmony Hub</p>
+
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h3>Your Musical journey starts here</h3>
+                            <p>At <b>Harmony Hub</b>, We believe music is more than sound. It's emotion, passion and expression.
+                            Since 2020 we have been helping musicians, beginners to professionals, find the perfect instrument for their sound </p>
+                            <br>
+
+                            <p>From Acoustic guitar to DJ controllers, we provide top-quality instruments at the best prices.
+                            With fast delivery and expert support, we make sure your musical journey is smooth and inspiring.</p>
+
+                            <br>
+                            <a href="producthighlights.html" class="btn">Explore Instruments</a>
+                            </div>
+                    </div>
+                    </div>
+               
+                    <div class="footer">
+            <p>&copy; 2026 Harmony Hub. All Rights Reserved </p>
+            <p>call: +91 9876543210 | Email:info@harmonyhub.com</p>
+        </div>
+              
+        </div>
+        
+    </body>
+</html>
