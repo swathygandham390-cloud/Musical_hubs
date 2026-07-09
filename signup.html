@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="wdth=device-width, initial-scale=1.0">
+        <title>HarmonyHub</title>
+    </head>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            background: url(https://img.magnific.com/free-photo/drum-kit-dark-background-with-stage-lighting-copy-space_169016-13944.jpg?semt=ais_hybrid&w=740&q=80);
+            background-position: center;
+            background-size: cover;
+            height: 80vh;
+            font-family: Arial;
+        }
+
+        .signup{
+            width: 280px;
+            height: 500px;
+            background: transparent;
+            border: double 4px #ff7320;
+            backdrop-filter: blur(20px);
+            color: orange;
+          
+            position: absolute;
+           margin-top: 600px;
+              margin-left: 500px;
+            box-sizing: border-box;
+            padding: 30px 25px;
+            border-radius: 15px;
+        }
+
+        h1{
+            padding: 20px;
+            text-align: center;
+            font-size: 25px;
+            color: #ff7320;
+            font-weight: bold;
+        }
+
+        .h11{
+            margin-top: -40px;
+            text-decoration: underline;
+            border: solid 2px #ff7320;
+            border-width: 3px;
+        }
+
+        .signup h1{
+            background-color: none;
+            border-radius: 6px;
+            margin: 0px;
+            padding: 10px;
+        }
+
+        .signup input{
+            width: 100%;
+            margin-bottom: 14px;
+               border: none;
+            border-bottom: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+            height: 20px;
+        }
+
+  
+
+        .btn{
+                font-size: 15px;
+            font-weight: 600;
+            color:#070000;
+            background-color:#ff7230;
+            padding-left: 13px;
+            height: 30px;
+            width: 70%;
+            margin-left: 29px;
+        }
+
+        .btn:hover{
+            animation: 0.4 ease-in-out;
+        }
+
+        .i1:hover{
+            color: #ff7320;
+            background: transparent;
+            border-bottom: 2px solid orange;
+            border-right: 2px solid orange;
+            border-left: 2px solid orange;
+            border-bottom-left-radius:4px ;
+            border-bottom-right-radius:4px ;
+        }
+            .i2:hover{
+            color: #ff7320;
+            background: transparent;
+            border-bottom: 2px solid orange;
+            border-right: 2px solid orange;
+            border-left: 2px solid orange;
+            border-bottom-left-radius:4px ;
+            border-bottom-right-radius:4px ;
+        }
+
+            .i3:hover{
+            color: #ff7320;
+            background: transparent;
+             border-bottom: 2px solid orange;
+            border-right: 2px solid orange;
+            border-left: 2px solid orange;
+            border-bottom-left-radius:4px ;
+            border-bottom-right-radius:4px ;
+        }
+
+            .i4:hover{
+            color: #ff7230;
+            background: transparent;
+             border-bottom: 2px solid orange;
+            border-right: 2px solid orange;
+            border-left: 2px solid orange;
+            border-bottom-left-radius:4px ;
+            border-bottom-right-radius:4px ;
+        }
+
+        .bottom-text{
+            color: white;
+            margin-top: 30px;
+            margin-right: -70px;
+            margin-left: -10px;
+        }
+
+        a{
+            color: orange;
+            margin-bottom: -40px;
+            padding-left: 5px;
+        }
+
+        .navbar{
+            
+                background-color: #333333;
+                color:white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 30px;
+                position: sticky;
+                top:0;
+                z-index: 1000;
+                gap:20px;
+                height: 40px;
+            }
+            
+            .menu a{
+                color:white;
+                text-decoration: none;
+                margin: 0 15px;
+                font-weight: 500;
+            }
+
+            
+           .logo img{
+                padding-top: 10px;
+                width: 70px ;
+                height: 70px;
+                margin-right: -20px;
+                color: #ff7320;
+            }
+
+            .logoname{
+               margin-right: 300px;
+              font-size: 18px;
+               color: #ff7320;
+               font-weight: bold;
+            }
+
+            input.error{
+                border-bottom: 2px dotted red !important;
+            }
+
+            .menu a:hover{
+                color: #ff7230;
+
+            }
+
+    </style>
+    <body>
+         <div class="navbar">
+            <div class="logo"> 
+                <img src="C:\Users\admin\HarmonyHub\harmonyhubimg.png"> </div><div class="logoname"><p class="p1">Harmony Hub</p></div>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="aboutus.html"> About Us</a>
+                <a href="producthighlights.html">Highlights</a>
+                <a href="features.html">Features</a>
+                <a href="testimonial.html">Testimonials</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="signup.html">Signup</a>
+            </div>
+       
+        <div class="signup">
+            <h1 class="h11">Sign Up </h1>
+            <form class="frm" id="signupform" onsubmit="return validateForm()">
+                <p>Name</p>
+                <input class="i1" type="text" id="name" name="" placeholder="Enter Your Name" required>
+                 <p>Email</p>
+                <input class="i2" type="email" id="email" name="" placeholder="Enter Your Email" required>
+                 <p>Password</p>
+                <input class="i3" type="password" id="password" name="" placeholder="Create Password" required>
+                 <p>Confirm Password</p>
+                <input class="i4" type="password" id="confirmPassword" name="" placeholder="Re-enter your password" required><br>
+                <br>
+                <button type="submit" class="btn" value="SignUp">Sign Up</button><br>
+                
+                    <div class="bottom-text"> Already have an account? <a href="login.html">Sign In</a>
+              </div>  
+                  </form>
+                  <script>
+                    function validateForm(){
+
+                        let name=document.getElementById("name");
+                        let email=document.getElementById("email");
+                        let password=document.getElementById("password");
+                        let confirmPassword=document.getElementById("confirmPassword");
+
+                        let isValid=true;
+
+                        name.classList.remove("error");
+                           email.classList.remove("error");
+                              password.classList.remove("error");
+                                 confirmPassword.classList.remove("error");
+                    
+                                 if(name.value.trim()===""){
+                                    alert("Enter your name");
+                                    name.classList.add("error");
+                                    isValid=false;
+                                 }
+
+                                  if(email.value.trim()===""){
+                                    alert("Enter your email");
+                                    email.classList.add("error");
+                                    isValid=false;
+                                 }
+
+                                  if(password.value.trim()===""){
+                                    alert("Enter your password");
+                                    password.classList.add("error");
+                                    isValid=false;
+                                 }
+
+                                  if(confirmPassword.value.trim()===""){
+                                    alert("Re-enter your confirmpassword ");
+                                    confirmPassword.classList.add("error");
+                                    isValid=false;
+                                 }
+
+                                 if(isValid ===false){
+                                  return false;
+                    }
+
+                                 if(password.value !== confirmPassword.value){
+                                    alert("Both the passwords are not same!");
+                                    password.classList.add("error");
+                                     confirmPassword.classList.add("error");
+                                     confirmPassword.value="";
+                                     return false;
+                                 }
+
+                                 alert("Sign Up Successful!");
+                                 return true;
+
+                                }
+
+                  </script>
+                  
+ 
+        </div>
+    </body>
+    
+</html>
